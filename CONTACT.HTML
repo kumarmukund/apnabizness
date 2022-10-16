@@ -26,12 +26,35 @@
             
         }
     </style> -->
+    <style>
+        
+const inputs = document.querySelectorAll(".input");
+
+function focusFunc() {
+  let parent = this.parentNode;
+  parent.classList.add("focus");
+}
+
+function blurFunc() {
+  let parent = this.parentNode;
+  if (this.value == "") {
+    parent.classList.remove("focus");
+  }
+}
+
+inputs.forEach((input) => {
+  input.addEventListener("focus", focusFunc);
+  input.addEventListener("blur", blurFunc);
+});
+
+
+    </style>
 </head>
-<body>
+
 <!--     <div class="qu">
         <marquee behavior="alternate" direction="right"><h1>CONTACT US FORM...</h1></marquee>
         </div> -->
-        <br>
+       
 <!--     <div class="contain">
 
         <div class="wrapper">
@@ -90,19 +113,7 @@
      </div>
         </div>
       </div> -->
-    
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Form || Learning robo</title>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+   
   <body>
     <div class="container">
       
