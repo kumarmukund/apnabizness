@@ -27,28 +27,15 @@
         }
     </style> -->
     <style>
-        
-const inputs = document.querySelectorAll(".input");
-
-function focusFunc() {
-  let parent = this.parentNode;
-  parent.classList.add("focus");
-}
-
-function blurFunc() {
-  let parent = this.parentNode;
-  if (this.value == "") {
-    parent.classList.remove("focus");
-  }
-}
-
-inputs.forEach((input) => {
-  input.addEventListener("focus", focusFunc);
-  input.addEventListener("blur", blurFunc);
-});
-
+        document.querySelector('#contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    e.target.elements.name.value = '';
+    e.target.elements.email.value = '';
+    e.target.elements.message.value = '';
+  });
 
     </style>
+   
 </head>
 
 <!--     <div class="qu">
@@ -113,89 +100,79 @@ inputs.forEach((input) => {
      </div>
         </div>
       </div> -->
-   
-  <body>
-    <div class="container">
-      
-      <div class="form">
-        <div class="contact-info">
-          <h3 class="title">Let's get in touch</h3>
-          <p class="text">
-           APNABIZNESS IT SERVICES 
-          </p>
-
-          <div class="info">
-            <div class="information">
-             
-              <p>BHOPAL , MADHYA PRADESH</p>
-            </div>
-            <div class="information">
-              
-              <p>apnabizness0304@gmail.com</p>
-            </div>
-            <div class="information">
-              
-              <p>9407172146</p>
-            </div>
-          </div>
-
-<!--           <div class="social-media">
-            <p>Connect with us :</p>
-            <div class="social-icons">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div><br> 
-            <div class="credit">Made with <span style="color:tomato">❤</span> by <a href="https://www.learningrobo.com/">Learning Robo</a></div>-->
-          </div>
-        </div>
-
-        <div class="contact-form">
-          <span class="circle one"></span>
-          <span class="circle two"></span>
-
-          <form action="/contact/" autocomplete="on" data-netlify="true">
-            <h3 class="title">Contact us</h3>
-            <div class="input-container">
-              <input type="text" name="name" class="input" />
-              <label for="">Enter name</label>
-              <span>name</span>
-            </div>
-            <div class="input-container">
-              <input type="email" name="email" class="input" />
-              <label for="">Enter Email</label>
-              <span>Email</span>
-            </div>
-            <div class="input-container">
-              <input type="tel" name="phone" class="input" />
-              <label for="">Enter Number</label>
-              <span>Phone</span>
-            </div>
-            <div class="input-container textarea">
-              <textarea name="message" class="input"></textarea>
-              <label for="">Message</label>
-              <span>Message</span>
-            </div>
-            <input type="submit" value="Send" class="btn" />
-          </form>
+<section id="contact">
+  
+  <h1 class="section-header">Contact</h1>
+  
+  <div class="contact-wrapper">
+  
+  <!-- Left contact page --> 
+    
+    <form id="contact-form" class="form-horizontal" role="form data-netlify="true"">
+       
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
         </div>
       </div>
-    </div>
 
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+        </div>
+      </div>
+
+      <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+      
+      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+        <div class="alt-send-button">
+          <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+        </div>
+      
+      </button>
+      
+    </form>
     
-  </body>
-</html>
+  <!-- Left contact page --> 
+    
+      <div class="direct-contact-container">
 
+        <ul class="contact-list">
+          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">BHOPAL , MADHYA PRADESH</span></i></li>
+          
+          <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">9407172146</a></span></i></li>
+          
+          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">apnabizness@0304@gmail.com</a></span></i></li>
+          
+        </ul>
 
+        <hr>
+        <ul class="social-media-list">
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-github" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-codepen" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+            <i class="fa fa-instagram" aria-hidden="true"></i></a>
+          </li>       
+        </ul>
+        <hr>
+
+        <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+
+      </div>
+    
+  </div>
+  
+</section>  
+  
+  
+    
       <br>
     <!--footer -->
     <footer class="bg-white dark:bg-gray-900">
