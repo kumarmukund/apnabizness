@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOBILE APP DEVELOPMENT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      // Burger menus
+      document.addEventListener("DOMContentLoaded", function () {
+        // open
+        const burger = document.querySelectorAll(".navbar-burger");
+        const menu = document.querySelectorAll(".navbar-menu");
+
+        if (burger.length && menu.length) {
+          for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        // close
+        const close = document.querySelectorAll(".navbar-close");
+        const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+        if (close.length) {
+          for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        if (backdrop.length) {
+          for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- NAVBAR COMPONENT -->
+    <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
+      <img class="w-16" src="LOGO.jpg" alt="APNABIZNESS" />
+      <a href="INDEX.HTML" class="flex items-center">
+        &nbsp;
+        <span class="self-center whitespace-nowrap text-xl font-semibold"
+          >APNABIZNESS IT SERVICES</span
+        >
+      </a>
+      <div class="lg:hidden">
+        <button class="navbar-burger flex items-center text-blue-600 p-3">
+          <svg
+            class="block h-4 w-4 fill-current"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Mobile menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+        </button>
+      </div>
+      <a
+        class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-200"
+        href="INDEX.HTML"
+        >HOME</a
+      >
+      &nbsp;
+      <a
+        class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
+        href="ABOUT.HTML"
+        >ABOUT</a
+      >&nbsp;
+      <a
+        class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
+        href="SERVICE.HTML"
+        >SERVICE</a
+      >
+      &nbsp;
+      <a
+        class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
+        href="CONTACT.HTML"
+        >CONTACT</a
+      >
+      <!-- <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" href="#">Sign up</a> -->
+    </nav>
+    <div class="navbar-menu relative z-50 hidden">
+      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+      <nav
+        class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+      >
+        <div class="flex items-center mb-8">
+          <img class="w-16" src="LOGO.jpg" alt="" />
+          <a href="INDEX.HTML" class="flex items-center">
+            <span class="self-center whitespace-nowrap text-xl font-semibold"
+              >APNABIZNESS</span
+            >
+          </a>
+          <button class="navbar-close">
+            <svg
+              class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="INDEX.HTML"
+                >Home</a
+              >
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="ABOUT.HTML"
+                >About Us</a
+              >
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="SERVICE.HTML"
+                >Services</a
+              >
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="CONTACT.HTML"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="mt-auto">
+          <p class="my-4 text-xs text-center text-gray-400">
+            <span>Copyright © 2023</span>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div class="text-gray-900 pt-12 pr-0 pb-14 pl-0 bg-white">
+      <div
+        class="w-full pt-4 pr-5 pb-6 pl-5 mt-0 mr-auto mb-0 ml-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16 max-w-7xl"
+      >
+        <div class="flex flex-col items-center sm:px-5 md:flex-row">
+          <div
+            class="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2"
+          >
+            <div
+              class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16 md:space-y-5"
+            >
+              <div
+                class="bg-green-500 flex items-center leading-none rounded-full text-gray-50 pt-1.5 pr-3 pb-1.5 pl-2 uppercase inline-block"
+              >
+                <p class="inline">
+                  <svg
+                    class="w-3.5 h-3.5 mr-1"
+                    fill="currentColor"
+                    viewbox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0
+                        00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755
+                        1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1
+                        0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </p>
+                <p class="inline text-xs font-medium">New</p>
+              </div>
+              <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl"
+                >Mobile App Development</a
+              >
+              <div class="pt-2 pr-0 pb-0 pl-0">
+                <p class="text-sm font-medium inline">author:</p>
+                <a
+                  class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1 underline"
+                  >mukund Kumar</a
+                >
+                <!-- <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">· 23rd, April 2021 ·</p>
+                  <p class="text-gray-200 text-sm font-medium inline mt-0 mr-1 mb-0 ml-1">1hr 20min. read</p> -->
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2">
+            <div class="block">
+              <img
+                src="app.png"
+                class="object-cover rounded-lg max-h-64 sm:max-h-96 btn- w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ABOUT US COMPONENT  -->
+      <hr />
+      <div class="py-16 bg-white">
+        <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+          <div
+            class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12"
+          >
+            <div class="md:5/12 lg:w-5/12">
+              <img
+                src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png"
+                alt="image"
+                loading="lazy"
+                width=""
+                height=""
+              />
+            </div>
+            <div class="md:7/12 lg:w-6/12">
+              <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">
+                Development is carried out by passionate developers
+              </h2>
+              <p class="mt-6 text-gray-600">We have a good <i>in-house</i></p>
+              team , who have already worked on many projects and gave their
+              best. They will use their full skills to fulfill your needs &
+              develops an <i>app</i> for you.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END OF ABOUT US COMPONENT  -->
+    </div>
+    <hr />
+    <!-- Container for demo purpose -->
+    <div class="container my-24 px-6 mx-auto">
+        <!-- Section: Design Block -->
+        <section class="mb-32 text-gray-800">
+          <div class="block rounded-lg shadow-lg bg-white">
+            <div class="flex flex-wrap items-center">
+              <div
+                class="grow-0 shrink-0 basis-auto block w-full lg:flex lg:w-6/12 xl:w-4/12"
+              >
+                <img
+                  src="app.png"
+                  alt="Trendy Pants and Shoes"
+                  class="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
+                />
+              </div>
+              <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
+                <div class="px-6 py-12 md:px-12">
+                  <h2 class="text-3xl font-bold mb-6 pb-2">Mobile App Development</h2>
+                  <div class="flex flex-wrap mb-6">
+                    <div class="w-full lg:w-6/12 xl:w-4/12 mb-4">
+                      <p class="flex items-center">
+                        <svg
+                          class="w-4 h-4 mr-2 text-green-600"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                          ></path>
+                        </svg>
+                      Android App
+                      </p>
+                    </div>
+                    <div class="w-full lg:w-6/12 xl:w-4/12 mb-4">
+                      <p class="flex items-center">
+                        <svg
+                          class="w-4 h-4 mr-2 text-green-600"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                          ></path>
+                        </svg>
+                       IOS App
+                      </p>
+                    </div>
+                    <div class="w-full lg:w-6/12 xl:w-4/12 mb-4">
+                      <p class="flex items-center">
+                        <svg
+                          class="w-4 h-4 mr-2 text-green-600"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                          ></path>
+                        </svg>
+                        Cross Platform App
+                      </p>
+                    </div>
+                    <div class="w-full lg:w-6/12 xl:w-4/12 mb-4">
+                      <p class="flex items-center">
+                        <svg
+                          class="w-4 h-4 mr-2 text-green-600"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                          ></path>
+                        </svg>
+                       Backend & API
+                      </p>
+                    </div>
+                    <div class="w-full lg:w-6/12 xl:w-4/12 mb-4">
+                      <p class="flex items-center">
+                        <svg
+                          class="w-4 h-4 mr-2 text-green-600"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                          ></path>
+                        </svg>
+                        Mobile App Testing
+                      </p>
+                    </div>
+                    <div class="w-full lg:w-6/12 xl:w-4/12 mb-4">
+                      <p class="flex items-center">
+                        <svg
+                          class="w-4 h-4 mr-2 text-green-600"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                          ></path>
+                        </svg>
+                       Mobile App Re-Development
+                      </p>
+                    </div>
+                  </div>
+                  <!-- <button
+                    type="button"
+                    class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                  >
+                   <a href="QUOT.HTML">GET QUOTATION</a>
+                  </button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section: Design Block -->
+      </div>
+  <hr>
+    <!-- QUOTATION  -->
+       <!-- component -->
+<div class = "body bg-white dark:bg-[#0F172A]">
+    <div class = "bg-black before:animate-pulse before:bg-gradient-to-b before:from-gray-900 overflow-hidden before:via-[#00FF00] before:to-gray-900 before:absolute ">
+        <div id="myDIV" >
+            <div class = "w-[100vw] h-[100vh] px-3 sm:px-5 flex items-center justify-center absolute">
+                <div class = "w-full sm:w-1/2 lg:2/3 px-6 bg-gray-500 bg-opacity-20 bg-clip-padding backdrop-filter backdrop-blur-sm text-white z-50 py-4  rounded-lg">
+                    <div class = "w-full flex justify-center text-[#00FF00] text-xl mb:2 md:mb-5">
+                      Get Quotation
+                    </div>
+                    <form action="WEBD" data-netlify="true">
+                    <div class="mb-6">
+                        <label for="email" class="block mb-2 text-xs font-medium text-white">Your email</label>
+                        <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 md:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block mb-2 text-xs font-medium text-white">Your contact no</label>
+                        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1.5 md:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                    </div>
+                    <div class = "mt-4 md:mt-10 w-full flex justify-center text-sm md:text-xl bg-[#00FF00] py-2 rounded-md">
+                        <input type="submit" value="Submit">
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<div>
+    <script>
+        const para = document.createElement("div");
+        para.className = 'flex flex-wrap gap-0.5 h-screen items-center justify-center  relative';
+            let el = '<div class = "  transition-colors duration-[1.5s] hover:duration-[0s] border-[#00FF00] h-[calc(5vw-2px)] w-[calc(5vw-2px)] md:h-[calc(4vw-2px)] md:w-[calc(4vw-2px)] lg:h-[calc(3vw-4px)] lg:w-[calc(3vw-4px)] bg-gray-900 hover:bg-[#00FF00]"></div>'
+            for (var k = 1; k<=1000; k++){
+                el+= '<div class = " transition-colors duration-[1.5s] hover:duration-[0s] border-[#00FF00] h-[calc(5vw-2px)] w-[calc(5vw-2px)] md:h-[calc(4vw-2px)] md:w-[calc(4vw-2px)] lg:h-[calc(3vw-4px)] lg:w-[calc(3vw-4px)] bg-gray-900 hover:bg-[#00FF00]"></div>';
+            };
+    
+            para.innerHTML = el;
+        document.getElementById("myDIV").appendChild(para);
+    </script>
+      <!-- END OF QUOTATION  -->
+  </body>
+</html>
